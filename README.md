@@ -6,11 +6,6 @@ version 0.16.0.
 ## Build & development
 
 Run `grunt` for building and `grunt serve` for preview.
-If `grunt serve` give.
-<aside class="notice">
-  Warning: Running “compass:server” (compass) task
-</aside>
-Just sudo `gem install compass` on Terminal.
 
 ## Testing
 
