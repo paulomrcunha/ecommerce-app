@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name ecommerceAppApp.controller:AboutCtrl
+ * @name ecommerceApp.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Controller of the ecommerceAppApp
+ * Controller of the ecommerceApp
  */
-angular.module('ecommerceAppApp')
+angular.module('ecommerceApp')
   .controller('AboutCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

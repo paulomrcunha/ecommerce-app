@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name ecommerceAppApp
+ * @name ecommerceApp
  * @description
- * # ecommerceAppApp
+ * # ecommerceApp
  *
  * Main module of the application.
  */
 angular
-  .module('ecommerceAppApp', [
+  .module('ecommerceApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',

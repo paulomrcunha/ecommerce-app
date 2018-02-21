@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name ecommerceAppApp.controller:CategoryCtrl
+ * @name ecommerceApp.controller:CategoryCtrl
  * @description
  * # CategoryCtrl
- * Controller of the ecommerceAppApp
+ * Controller of the ecommerceApp
  */
-angular.module('ecommerceAppApp')
+angular.module('ecommerceApp')
   .controller('CategoryCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

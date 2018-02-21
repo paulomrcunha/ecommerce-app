@@ -3,7 +3,7 @@
 describe('Controller: CategoryCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('ecommerceAppApp'));
+  beforeEach(module('ecommerceApp'));
 
   var CategoryCtrl,
     scope;
