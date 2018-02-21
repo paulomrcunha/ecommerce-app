@@ -10,6 +10,7 @@
  */
 angular
   .module('ecommerceApp', [
+    'ecommerceApp.moltin',
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -29,15 +30,42 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/contact', {
+        templateUrl: 'views/contact.html',
+        controller: 'ContactCtrl',
+        controllerAs: 'contact'
+      })
       .when('/store', {
         templateUrl: 'views/store.html',
         controller: 'StoreCtrl',
-        controllerAs: 'store'
+        controllerAs: 'store',
+        resolve: {
+          categories: function ($q, MoltinAuth) {
+            var deferred = $q.defer();
+            $q.when(MoltinAuth).then(function (moltin) {
+              moltin.Category.List(null, function (categories) {
+                deferred.resolve(categories);
+              });
+            })
+            return deferred.promise;
+          }
+        }
       })
-      .when('/category', {
+      .when('/category/:id', {
         templateUrl: 'views/category.html',
         controller: 'CategoryCtrl',
-        controllerAs: 'category'
+        controllerAs: 'category',
+        resolve: {
+          products: function ($q, $route, MoltinAuth) {
+            var deferred = $q.defer();
+            $q.when(MoltinAuth).then(function (moltin) {
+              moltin.Product.List({category: $route.current.params.id}, function (products) {
+                deferred.resolve(products);
+              });
+            })
+            return deferred.promise;
+          }
+        }
       })
       .when('/product', {
         templateUrl: 'views/product.html',
